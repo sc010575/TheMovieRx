@@ -7,7 +7,20 @@
 		<key>TheMovieRx.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>11</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C5E4E68C21B8D43E00555307</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5E4E6A021B8D44000555307</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
