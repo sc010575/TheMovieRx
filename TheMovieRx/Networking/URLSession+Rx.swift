@@ -84,4 +84,10 @@ extension Reactive where Base: URLSession {
             return ParseJson.parse(data: data) ?? Movie.emptyMovie
         }
     }
+    func movieDetail(request: URLRequest) -> Observable<MovieDetail> {
+        return data(request: request).map { data in
+            return ParseJson.parse(data: data) ?? MovieDetail.emptyMovieDetails
+        }
+    }
+
 }

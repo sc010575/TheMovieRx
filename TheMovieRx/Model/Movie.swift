@@ -30,6 +30,7 @@ struct Movie:Codable {
 }
 
 struct Result :Codable {
+    let id:Int
     let voteCount:Int
     let voteAverage:Float
     let title:String

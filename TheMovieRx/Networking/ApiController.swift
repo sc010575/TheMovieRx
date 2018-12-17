@@ -2,28 +2,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol Serialize {
-    associatedtype model
-    static func parse(data: Data) -> model?
-}
-
-final class ParseJson<T:Codable>: Serialize {
-
-    typealias model = T
-    class func parse(data: Data) -> T? {
-        do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let result = try decoder.decode(T.self, from: data)
-            return result
-        } catch {
-            print("JSON Error: \(error)")
-            return nil
-        }
-    }
-}
-
-
 class ApiController: ApiResource {
 
     init() {
@@ -33,9 +11,17 @@ class ApiController: ApiResource {
     }
 
     func loadFor(_ movieRequestType: MovieQueryType) -> Observable<Movie> {
-        if let request = self.buildRequest(requestType: movieRequestType) {
+        if let request = self.movieTypeRequest(requestType: movieRequestType) {
             return URLSession.shared.rx.movie(request: request)
-        }else {
+        } else {
+            return Observable.empty()
+        }
+    }
+
+    func loadFor(_ movieId: Int) -> Observable<MovieDetail> {
+        if let request = self.movieDetailRequest(id: movieId) {
+            return URLSession.shared.rx.movieDetail(request: request)
+        } else {
             return Observable.empty()
         }
     }

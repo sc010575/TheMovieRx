@@ -68,6 +68,16 @@ class MovieListViewController: UIViewController {
             .bind { error in
                 self.showError(error, bag: self.bag)
             }.disposed(by: bag)
+        
+        tableView.rx
+            .itemSelected
+            .map { indexPath in
+                return (indexPath, self.dataSource[indexPath])
+            }
+            .subscribe(onNext: { pair in
+                self.performSegue(withIdentifier: "MoveToDetails", sender: pair.1)
+            })
+            .disposed(by: bag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,6 +85,16 @@ class MovieListViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let customData = sender as? CustomData else { return}
+        
+        if segue.identifier == "MoveToDetails" {
+            guard let detailVC = segue.destination as? MovieDetailViewController else { return }
+            detailVC.movieTitle = customData.title
+        }
+    }
+    
     @IBAction func onTapClose(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

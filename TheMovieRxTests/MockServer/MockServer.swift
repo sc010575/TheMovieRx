@@ -32,7 +32,17 @@ class MockServer {
         
         return self
     }
+    
+    @discardableResult
+    func respondToMovieDetails(fixture: String = "movieDetail", statusCode: Int = 200)  -> MockServer {
+        let responseData = dataFromFixture(fixture)
+        
+        addResponse(method: "GET", path: "/movie/297802", responseData: responseData!, statusCode: statusCode)
+        
+        return self
+    }
 }
+
 
 private extension MockServer {
     

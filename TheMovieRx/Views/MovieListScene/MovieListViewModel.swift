@@ -12,6 +12,7 @@ import RxCocoa
 import RxDataSources
 
 struct CustomData {
+    var id:Int
     var description: String
     var posterUrl: String
     var title: String
@@ -95,7 +96,7 @@ final class MovieListViewModel: MovieListVMProtocal {
 private extension MovieListViewModel {
     func prepareSectionData(_ results: [Result]) -> [SectionOfCustomData] {
         return results.map {
-            SectionOfCustomData(header: movieRequestType, items: [CustomData(description: $0.overview, posterUrl: $0.posterPath, title: $0.title, releaseDate: $0.releaseDate)])
+            SectionOfCustomData(header: movieRequestType, items: [CustomData(id:$0.id, description: $0.overview, posterUrl: $0.posterPath, title: $0.title, releaseDate: $0.releaseDate)])
         }
     }
 }

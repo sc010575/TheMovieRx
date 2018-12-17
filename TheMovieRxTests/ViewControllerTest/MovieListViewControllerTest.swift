@@ -68,6 +68,33 @@ final class MovieListViewControllerTest: QuickSpec {
 //                    alertTearDown()
                 }
             }
+            context("When movie row is clicked") {
+                
+                beforeEach {
+                    self.server.respondToMovieLists(fixture: "movie", statusCode: 200).start()
+                    let viewModel = MovieListViewModel(ApiControllerMock(), requestType: .popular)
+                    viewController?.viewModel = viewModel
+                    
+                }
+                afterEach {
+                    self.server.stop()
+                }
+                it("should perform right segue") {
+                    viewController?.preloadView()
+                    let (wnd, tearDown) = (viewController?.appearInWindowTearDown())!
+                    defer { tearDown() }
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    viewController?.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition(rawValue: 0)!)
+                    
+                    let segue = SegueHelper.segues(ofViewController: viewController!)
+                    expect(segue.contains("MoveToDetails")).toEventually(beTrue())
+                    expect(segue.count).to(equal(1))
+
+                    let sender = viewController?.shouldPerformSegue(withIdentifier: "MoveToDetails", sender: nil)
+                    expect(sender).toEventually(beTrue())
+
+                }
+            }
         }
     }
 }

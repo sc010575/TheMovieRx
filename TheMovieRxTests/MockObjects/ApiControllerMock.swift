@@ -9,7 +9,7 @@ class ApiControllerMock: ApiController {
     let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
     override func loadFor(_ movieRequestType: MovieQueryType) -> Observable<Movie> {
-        if let request = self.buildRequest(requestType: movieRequestType) {
+        if let request = self.movieTypeRequest(requestType: movieRequestType) {
             let s = URLSession.shared.rx.movie(request: request).asObservable().observeOn(scheduler).toBlocking(timeout: 1.0).materialize()
 
             switch s {

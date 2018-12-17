@@ -231,11 +231,51 @@
                     <connections>
                         <outlet property="activityIndicator" destination="21g-ue-NzH" id="9cQ-Ar-BjW"/>
                         <outlet property="tableView" destination="LLe-CB-6fz" id="GOm-3T-Ltc"/>
+                        <segue destination="hVD-Wo-Ozm" kind="custom" identifier="MoveToDetails" customClass="CustomSegue" customModule="TheMovieRx" customModuleProvider="target" id="kMI-Ns-9b3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4W-zN-hFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="301.60000000000002" y="7.6461769115442282"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="fzo-D1-N4V">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="hVD-Wo-Ozm" customClass="MovieDetailViewController" customModule="TheMovieRx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61P-wT-Fme">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-Nb-fKf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4m-ld-odi">
+                                <rect key="frame" x="331" y="50" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="86D-0r-PAG"/>
+                                    <constraint firstAttribute="width" constant="24" id="eer-0I-zHE"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="CloseIconGray"/>
+                                <connections>
+                                    <action selector="onTapExit:" destination="hVD-Wo-Ozm" eventType="touchUpInside" id="geo-UI-AhC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KtN-Mg-iZG" firstAttribute="trailing" secondItem="RpX-Nb-fKf" secondAttribute="trailing" id="Cl6-5X-hmz"/>
+                            <constraint firstItem="O4m-ld-odi" firstAttribute="top" secondItem="KtN-Mg-iZG" secondAttribute="top" constant="30" id="GVV-HG-2mM"/>
+                            <constraint firstItem="KtN-Mg-iZG" firstAttribute="bottom" secondItem="RpX-Nb-fKf" secondAttribute="bottom" id="X0l-Xd-7C3"/>
+                            <constraint firstItem="KtN-Mg-iZG" firstAttribute="trailing" secondItem="O4m-ld-odi" secondAttribute="trailing" constant="20" id="ZSm-Xn-CdC"/>
+                            <constraint firstItem="RpX-Nb-fKf" firstAttribute="top" secondItem="KtN-Mg-iZG" secondAttribute="top" id="vFt-Lt-aBV"/>
+                            <constraint firstItem="RpX-Nb-fKf" firstAttribute="leading" secondItem="KtN-Mg-iZG" secondAttribute="leading" id="wBR-Ug-OVT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KtN-Mg-iZG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eay-Ct-Cqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="9"/>
         </scene>
     </scenes>
     <resources>
