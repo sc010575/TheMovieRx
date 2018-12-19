@@ -18,6 +18,7 @@ final class MovieDetailTest: QuickSpec {
                     expect(movieDetail.releaseDate).to(equal("2018-12-07"))
                     expect(movieDetail.backdropPath).to(equal("/5A2bMlLfJrAfX9bqAibOL2gCruF.jpg"))
                     expect(movieDetail.productionCompanies.count).to(equal(4))
+                    expect(movieDetail.voteCount).to(equal(233))
                 }
             }
         }

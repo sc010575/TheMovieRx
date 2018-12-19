@@ -90,8 +90,12 @@ class MovieListViewController: UIViewController {
         guard let customData = sender as? CustomData else { return}
         
         if segue.identifier == "MoveToDetails" {
-            guard let detailVC = segue.destination as? MovieDetailViewController else { return }
-            detailVC.movieTitle = customData.title
+            guard let navVC = segue.destination as? UINavigationController,
+                let detailVC = navVC.visibleViewController as? MovieDetailViewController else { return }
+            
+            let viewModel = MovieDetailViewModel(customData.id)
+            detailVC.viewModel = viewModel
+            detailVC.movieTitle = "\(customData.title) (\(customData.releaseDate.prefix(4)))"
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomSegue: UIStoryboardSegue {
-    var animationDuration = 1.5
+    var animationDuration = 0.8
     
     override func perform() {
 

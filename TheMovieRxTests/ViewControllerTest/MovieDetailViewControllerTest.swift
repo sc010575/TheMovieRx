@@ -16,13 +16,15 @@ class MovieDetailViewControllerTest: QuickSpec {
                 it("Contain movie name in the title and year of release"){
                     let title = "Aquaman"
                     let release = "2018"
-                    
+                    let movieDetailViewModelMock = MovieDetailViewModelMock(2000)
                     viewController?.movieTitle = "\(title)(\(release))"
+                    viewController?.viewModel = movieDetailViewModelMock
                     viewController?.preloadView()
                     let (wnd, tearDown) = (viewController?.appearInWindowTearDown())!
                     defer { tearDown() }
                     expect(viewController?.title).to(contain(title))
                     expect(viewController?.title).to(contain(release))
+                    expect(viewController?.overviewLabel.text).toEventually(equal("Test Overview"))
                 }
             }
         }

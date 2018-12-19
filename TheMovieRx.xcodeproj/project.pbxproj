@@ -28,6 +28,10 @@
 		C5A7D59E21C7AB4000E9E723 /* ApiResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D59D21C7AB4000E9E723 /* ApiResourceTest.swift */; };
 		C5A7D5A021C7D83D00E9E723 /* ApiControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D59F21C7D83D00E9E723 /* ApiControllerTest.swift */; };
 		C5A7D5A221C7F2E800E9E723 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D5A121C7F2E800E9E723 /* MovieDetailViewModel.swift */; };
+		C5A7D5A421C8D55200E9E723 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D5A321C8D55200E9E723 /* PosterView.swift */; };
+		C5A7D5A621C8D63400E9E723 /* PosterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A7D5A521C8D63400E9E723 /* PosterView.xib */; };
+		C5A7D5A821C9EF2A00E9E723 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D5A721C9EF2A00E9E723 /* CircularProgressView.swift */; };
+		C5A7D5AA21CA505200E9E723 /* MovieDetailViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D5A921CA505200E9E723 /* MovieDetailViewModelMock.swift */; };
 		C5E4E69121B8D43E00555307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E4E69021B8D43E00555307 /* AppDelegate.swift */; };
 		C5E4E69621B8D43E00555307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E4E69421B8D43E00555307 /* Main.storyboard */; };
 		C5E4E69821B8D44000555307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E4E69721B8D44000555307 /* Assets.xcassets */; };
@@ -90,6 +94,10 @@
 		C5A7D59D21C7AB4000E9E723 /* ApiResourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResourceTest.swift; sourceTree = "<group>"; };
 		C5A7D59F21C7D83D00E9E723 /* ApiControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiControllerTest.swift; sourceTree = "<group>"; };
 		C5A7D5A121C7F2E800E9E723 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		C5A7D5A321C8D55200E9E723 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		C5A7D5A521C8D63400E9E723 /* PosterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterView.xib; sourceTree = "<group>"; };
+		C5A7D5A721C9EF2A00E9E723 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		C5A7D5A921CA505200E9E723 /* MovieDetailViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelMock.swift; sourceTree = "<group>"; };
 		C5E4E68D21B8D43E00555307 /* TheMovieRx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieRx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E4E69021B8D43E00555307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5E4E69521B8D43E00555307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +204,9 @@
 			children = (
 				C5A7D58B21C65F7800E9E723 /* MovieDetailViewController.swift */,
 				C5A7D5A121C7F2E800E9E723 /* MovieDetailViewModel.swift */,
+				C5A7D5A321C8D55200E9E723 /* PosterView.swift */,
+				C5A7D5A521C8D63400E9E723 /* PosterView.xib */,
+				C5A7D5A721C9EF2A00E9E723 /* CircularProgressView.swift */,
 			);
 			path = MovieDetailScene;
 			sourceTree = "<group>";
@@ -373,6 +384,7 @@
 			children = (
 				C5E4E6DA21BE112100555307 /* MovieListViewModelMock.swift */,
 				C5329C0321C3BA8D00CE7643 /* ApiControllerMock.swift */,
+				C5A7D5A921CA505200E9E723 /* MovieDetailViewModelMock.swift */,
 			);
 			path = MockObjects;
 			sourceTree = "<group>";
@@ -499,6 +511,7 @@
 				C5E4E69B21B8D44000555307 /* LaunchScreen.storyboard in Resources */,
 				C5E4E69821B8D44000555307 /* Assets.xcassets in Resources */,
 				C5E4E69621B8D43E00555307 /* Main.storyboard in Resources */,
+				C5A7D5A621C8D63400E9E723 /* PosterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,12 +690,14 @@
 				C5E4E6C021BA2F4A00555307 /* ApiController.swift in Sources */,
 				C5A7D59121C68F8C00E9E723 /* CustomSegue.swift in Sources */,
 				C5A7D59621C75CC900E9E723 /* Serialize.swift in Sources */,
+				C5A7D5A821C9EF2A00E9E723 /* CircularProgressView.swift in Sources */,
 				C5E4E6CF21BB6D2C00555307 /* MovieListViewController.swift in Sources */,
 				C5E4E6BE21BA213000555307 /* ApiResource.swift in Sources */,
 				C5329BFC21C25DAC00CE7643 /* Constant.swift in Sources */,
 				C5A7D59821C75DA400E9E723 /* MovieDetail.swift in Sources */,
 				C5E4E6D321BBD5F200555307 /* MovieListTableViewCell.swift in Sources */,
 				C5E4E69121B8D43E00555307 /* AppDelegate.swift in Sources */,
+				C5A7D5A421C8D55200E9E723 /* PosterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +714,7 @@
 				C5329BFD21C25E0900CE7643 /* Constant.swift in Sources */,
 				C5329C0421C3BA8D00CE7643 /* ApiControllerMock.swift in Sources */,
 				C5E4E6C621BA517600555307 /* MovieModelTest.swift in Sources */,
+				C5A7D5AA21CA505200E9E723 /* MovieDetailViewModelMock.swift in Sources */,
 				C5E4E6D821BE0F6E00555307 /* MovieListViewControllerTest.swift in Sources */,
 				C5E4E6CC21BA58B500555307 /* Fixtures.swift in Sources */,
 				C5329C0121C3510700CE7643 /* Viewcontroller+Test.swift in Sources */,

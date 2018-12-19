@@ -11,35 +11,26 @@ import RxSwift
 import Alamofire
 import AlamofireImage
 
-class MovieListTableViewCell: UITableViewCell {
+class MovieListTableViewCell: UITableViewCell,ImageDisplable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    var disposable = SingleAssignmentDisposable()
-    let imageDownloader = ImageDownloader()
+//    var disposable = SingleAssignmentDisposable()
+//    let imageDownloader = ImageDownloader()
     
     override func prepareForReuse() {
         super.prepareForReuse()
         posterImage.image = nil
-        disposable.dispose()
-        disposable = SingleAssignmentDisposable()
     }
 
     func downloadAndDisplay(url stringUrl: String) {
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(stringUrl)") else { return }
-        let request = URLRequest(url: url)
         activityIndicator.startAnimating()
-        let s = URLSession.shared.rx.image(request: request).asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { uiImage in
-
-                self.posterImage.image = uiImage
-                self.activityIndicator.stopAnimating()
-            })
-        disposable.setDisposable(s)
+        downloadAndDisplay(stringUrl, in: posterImage) {
+            self.activityIndicator.stopAnimating()
+        }
     }
 
 //    func downloadAndDisplay(url stringUrl: String) {
