@@ -26,3 +26,8 @@ target 'TheMovieRxTests' do
   shared_pods
   test_pods
 end
+
+target 'TheMovieRxUITests' do
+    shared_pods
+    test_pods
+end
