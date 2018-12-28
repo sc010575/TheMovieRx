@@ -1030,6 +1030,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAEAC18160D15932EEF7137A /* Pods-TheMovieRx.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G9KR27J78;
@@ -1050,6 +1051,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FD57C36283EB291072B3FC4 /* Pods-TheMovieRx.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G9KR27J78;

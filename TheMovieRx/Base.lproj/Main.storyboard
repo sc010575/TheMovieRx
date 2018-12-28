@@ -386,6 +386,21 @@
                         <viewLayoutGuide key="safeArea" id="KtN-Mg-iZG"/>
                     </view>
                     <navigationItem key="navigationItem" id="VWJ-cg-eRF">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="bh7-wb-aKu">
+                            <rect key="frame" x="187.5" y="22" width="0.0" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fantastic Beasts: The Crimes of Grindelwald" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l56-u7-AvJ">
+                                    <rect key="frame" x="-170" y="-30" width="314" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="CloseIconGray" id="VeV-cw-siP">
                             <connections>
                                 <action selector="onTapExit:" destination="hVD-Wo-Ozm" id="bag-M9-MmE"/>
@@ -394,6 +409,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
+                        <outlet property="navigationTitle" destination="l56-u7-AvJ" id="UJg-lx-E9D"/>
                         <outlet property="overviewLabel" destination="Rpa-UZ-rO2" id="gf4-4K-yzY"/>
                         <outlet property="posterView" destination="YxX-LF-m1H" id="77u-FI-gT0"/>
                         <outlet property="progressBar" destination="9WC-MG-Swr" id="2k5-Kh-tmx"/>
@@ -401,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eay-Ct-Cqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="8.995502248875562"/>
+            <point key="canvasLocation" x="1828" y="-191"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="92P-5n-bce">
