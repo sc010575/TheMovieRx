@@ -16,7 +16,7 @@ class MovieDetailViewController: UIViewController {
     var viewModel:MovieDetailViewModel!
     let bag = DisposeBag()
 
-    @IBOutlet weak var navigationTitle: UILabel!
+//    @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var progressBar: CircularProgressView!
     @IBOutlet weak var posterView: PosterView!
     @IBOutlet weak var overviewLabel: UILabel!
@@ -24,7 +24,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         guard let title = movieTitle else { return }
         self.title = title
-        navigationTitle.text = title
+//        navigationTitle.text = title
         viewModel.movieDriver.drive(onNext: { movieDetail in
             self.overviewLabel.text = movieDetail.overview
             self.posterView.downloadAndDisplay(url: movieDetail.backdropPath)

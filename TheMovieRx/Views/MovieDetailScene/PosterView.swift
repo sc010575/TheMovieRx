@@ -28,11 +28,11 @@ extension FromNibLoadable where Self: UIView {
     }
 }
 
-protocol ImageDisplable {
+protocol ImageDisplayable {
     func downloadAndDisplay(_ UrlString: String, in imageView: UIImageView, completion: (() -> Void)?)
 }
 
-extension ImageDisplable {
+extension ImageDisplayable {
     func downloadAndDisplay(_ UrlString: String, in imageView: UIImageView, completion: (() -> Void)? = nil) {
         let disposable = SingleAssignmentDisposable()
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(UrlString)") else { return }
@@ -46,7 +46,7 @@ extension ImageDisplable {
         disposable.setDisposable(s)
     }
 }
-class PosterView: UIView, FromNibLoadable, ImageDisplable {
+class PosterView: UIView, FromNibLoadable, ImageDisplayable {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 

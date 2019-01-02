@@ -11,7 +11,7 @@ import RxSwift
 import Alamofire
 import AlamofireImage
 
-class MovieListTableViewCell: UITableViewCell,ImageDisplable {
+class MovieListTableViewCell: UITableViewCell,ImageDisplayable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
